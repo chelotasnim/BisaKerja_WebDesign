@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Chelo Tasnim Haryono_Bahan/icons/app-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Chelo Tasnim Haryono_Bahan/plugins/boxicons-2.0.7/css/boxicons.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Bisa Kerja | Situs Pencari Lowongan Kerja dan Proyek</title>
+</head>
+
+<body>
+    <!-- Loading Layer -->
+    <div class="loading-layer">
+        <div class="content">
+            <div class="icon">
+                <img src="../Chelo Tasnim Haryono_Bahan/icons/app-brand.png" alt="Bisa Kerja Logo" draggable="false">
+            </div>
+            <div class="bg">
+                <i class="bx bx-message-square"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bar Navigasi -->
+    <nav>
+
+        <!-- Label Situs -->
+        <div class="nav-item">
+            <img class="app-image" src="../Chelo Tasnim Haryono_Bahan/icons/app-brand.png" alt="Logo Bisa Kerja"
+                draggable="false">
+        </div>
+
+        <!-- Navigasi Halaman -->
+        <div class="nav-item nav-link">
+            <a data-section="1" onclick="toPoint(this)">Fitur</a>
+            <a data-section="2" onclick="toPoint(this)">Panduan</a>
+            <a data-section="3" onclick="toPoint(this)">Ulasan</a>
+            <a data-section="4" onclick="toPoint(this)">Pertanyaan</a>
+        </div>
+
+        <!-- Interaksi Lain Bagi Pengguna -->
+        <div class="nav-item nav-interface">
+            <div class="ui-setting">
+                <i class="bx bx-cog"></i>
+            </div>
+            <a href="" class="btn on">Masuk</a>
+        </div>
+    </nav>
+
+
+
+    <!-- Sesi Hero -->
+    <div id="hero" class="page">
+        <div class="typo">
+
+            <!-- Tagline Situs -->
+            <div class="typo-heading">
+                <h1>
+                    <span id="tagline-head">Dapatkan</span>
+                    <br>
+                    <span id="tagline-content" class="tagline-content"></span>
+                </h1>
+            </div>
+
+            <!-- Pengenalan Deskriptif -->
+            <div class="typo-desc">
+                <p>
+                    Dapatkan pekerjaan diberbagai sektor industri atau ambil proyek dan pekerjaan paruh waktu yang
+                    sesuai dengan keahlian anda!
+                </p>
+            </div>
+            <div class="typo-interface">
+                <a href="" class="btn on">Cari Lowongan</a>
+                <a class="btn" data-section="1" onclick="toPoint(this)">Lebih Lanjut</a>
+            </div>
+        </div>
+
+        <!-- Carousel Sektor Pekerjaan -->
+        <div class="carousel">
+
+            <!-- Card Carousel Yang Turun -->
+            <div class="c-card fliped">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/manajemen.jpg" alt="Sektor Manajemen" draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.9</p>
+                        <i class="bx bxs-star favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor Manajemen</p>
+                        <span>1788 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Carousel Yang Di Highlight -->
+            <div class="c-card highlight">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/it.jpg" alt="Sektor IT" draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.1</p>
+                        <i class="bx bxs-star-half favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor IT</p>
+                        <span>565 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/keuangan.jpg" alt="Sektor Keuangan" draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.6</p>
+                        <i class="bx bxs-star favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor Keuangan</p>
+                        <span>3895 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/teknisi.jpg" alt="Sektor Teknik" draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.7</p>
+                        <i class="bx bxs-star favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor Teknik</p>
+                        <span>5917 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/perdagangan.jpg" alt="Sektor Perdagangan"
+                    draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.0</p>
+                        <i class="bx bxs-star-half favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor Perdagangan</p>
+                        <span>4910 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/manajemen.jpg" alt="Sektor Manajemen" draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.9</p>
+                        <i class="bx bxs-star favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor Manajemen</p>
+                        <span>1788 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/it.jpg" alt="Sektor IT" draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.1</p>
+                        <i class="bx bxs-star-half favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor IT</p>
+                        <span>565 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/keuangan.jpg" alt="Sektor Keuangan" draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.6</p>
+                        <i class="bx bxs-star favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor Keuangan</p>
+                        <span>3895 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/teknisi.jpg" alt="Sektor Teknik" draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.7</p>
+                        <i class="bx bxs-star favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor Teknik</p>
+                        <span>5917 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card">
+                <img src="../Chelo Tasnim Haryono_Bahan/images/perdagangan.jpg" alt="Sektor Perdagangan"
+                    draggable="false">
+                <div class="fade-layer">
+                    <div class="rate-box">
+                        <p>4.0</p>
+                        <i class="bx bxs-star-half favorite-mark"></i>
+                    </div>
+                    <div class="sector-content">
+                        <p>Sektor Perdagangan</p>
+                        <span>4910 Lowongan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Sesi Fitur -->
+    <div id="fitur" class="page navigable" data-section="1" data-anchor="120" data-min-up="300" data-max-down="350">
+
+        <!-- Angka Penggunaan Situs -->
+        <div class="floating-banner">
+            <div class="fb-col">
+                <p><span class="count-stat" data-count="17">17</span>K</p>
+                <span class="stat-label">Lowongan</span>
+            </div>
+            <div class="fb-col">
+                <p><span class="count-stat" data-count="21">21</span>K</p>
+                <span class="stat-label">Proyek</span>
+            </div>
+            <div class="fb-col">
+                <p><span class="count-stat" data-count="185">185</span>K</p>
+                <span class="stat-label">Pengguna</span>
+            </div>
+        </div>
+
+        <!-- Keterangan Sesi -->
+        <header>
+            <h2>
+                Yang Kami
+                <br>
+                Sediakan <b>Untuk Anda</b>
+            </h2>
+        </header>
+        <div class="feature-container">
+
+            <!-- Kotak Layanan -->
+            <div class="feature-box">
+                <div class="icon">
+                    <img src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-1.png" alt="Lowongan Pekerjaan"
+                        draggable="false">
+                </div>
+                <div class="text">
+                    <p>Lowongan Pekerjaan</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">
+                    <img src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-2.png" alt="Kerja Remote" draggable="false">
+                </div>
+                <div class="text">
+                    <p>Proyek & Kerja Remote</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">
+                    <img src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-3.png" alt="Kerja Luar Negeri"
+                        draggable="false">
+                </div>
+                <div class="text">
+                    <p>Kerja Luar Negeri</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">
+                    <img src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-4.png" alt="Lowongan Disabilitas"
+                        draggable="false">
+                </div>
+                <div class="text">
+                    <p>Lowongan Disabilitas</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">
+                    <img style="opacity: .8;" src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-9.png"
+                        alt="Variasi Sektor Kerja" draggable="false">
+                </div>
+                <div class="text">
+                    <p>Variasi Sektor Kerja</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">
+                    <img src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-5.png" alt="Profiling Kandidat"
+                        draggable="false">
+                </div>
+                <div class="text">
+                    <p>Profiling Kandidat</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">
+                    <img src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-6.png" alt="Daftar Pencapaian"
+                        draggable="false">
+                </div>
+                <div class="text">
+                    <p>Rekap Pencapaian</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">
+                    <img src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-7.png" alt="Panduan Pengguna"
+                        draggable="false">
+                </div>
+                <div class="text">
+                    <p>Panduan Pengguna</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">
+                    <img src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-8.png" alt="Ulasan Lowongan" draggable="false">
+                </div>
+                <div class="text">
+                    <p>Ulasan Lowongan</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">
+                    <img src="../Chelo Tasnim Haryono_Bahan/icons/c-icon-10.png" alt="Integrasi Fitur"
+                        draggable="false">
+                </div>
+                <div class="text">
+                    <p>Integrasi Fitur</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Sesi Panduan -->
+    <div id="panduan" class="page navigable" data-section="2" data-anchor="81" data-min-up="350" data-max-down="350">
+
+        <header>
+            <h2>
+                Butuh <b>Panduan</b>
+                <br>
+                Untuk Mulai Menggunakan?
+            </h2>
+        </header>
+
+        <div class="step-container">
+            <div class="step-box active">
+                <div class="box-number">
+                    1
+                </div>
+                <div class="step-typo">
+                    <p class="step">Daftarkan Akun Anda</p>
+                    <span class="step-desc">
+                        Akun anda akan menjadi representasi anda secara digital, dimana profil dan data lainnya yang
+                        anda lengkapi akan selalu terkait ke akun anda.
+                    </span>
+                </div>
+                <div class="sc-bg-cle"></div>
+            </div>
+            <div class="step-box">
+                <div class="box-number">
+                    2
+                </div>
+                <div class="step-typo">
+                    <p class="step">Lengkapi Data Diri</p>
+                    <span class="step-desc">
+                        Data diri, riwayat pendidikan dan pengalaman kerja akan menjadi bagian penting ketika anda
+                        dipertimbangkan untuk sebuah pekerjaan, Isi dengan tepat!
+                    </span>
+                </div>
+                <div class="sc-bg-cle"></div>
+            </div>
+            <div class="step-box">
+                <div class="box-number">
+                    3
+                </div>
+                <div class="step-typo">
+                    <p class="step">Unggah Pencapaian</p>
+                    <span class="step-desc">
+                        Sertifikat, piagam dan bentuk penghargaan dalam kompetensi anda dapat menjadi poin tambahan yang
+                        sangat menarik bagi perusahaan atau pemberi proyek.
+                    </span>
+                </div>
+                <div class="sc-bg-cle"></div>
+            </div>
+            <div class="step-box">
+                <div class="box-number">
+                    4
+                </div>
+                <div class="step-typo">
+                    <p class="step">Dapatkan Pekerjaan!</p>
+                    <span class="step-desc">
+                        Sekarang anda siap untuk mencari kerja. Cari dan pilih pekerjaan atau proyek yang sesuai, lalu
+                        pertimbangkan untuk melamar di pekerjaan tersebut.
+                    </span>
+                </div>
+                <div class="sc-bg-cle"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Sesi Ulasan -->
+    <div id="ulasan" class="page navigable full-page" data-section="3" data-anchor="120" data-min-up="350"
+        data-max-down="400">
+
+        <header>
+            <h2>
+                <b>Dipercaya</b> Oleh
+            </h2>
+        </header>
+
+        <!-- Logo Perusahaan Yang Mempercayai bisakerja -->
+        <div class="companies-slider">
+            <div class="slider-move">
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/pomi.png" alt="Logo 1" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/bumn.png" alt="Logo 2" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/bri.png" alt="Logo 3" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/kemnaker.png" alt="Logo 4" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/puninar.png" alt="Logo 5" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/niagahoster.png" alt="Logo 6" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/pomi.png" alt="Logo 1" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/bumn.png" alt="Logo 2" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/bri.png" alt="Logo 3" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/kemnaker.png" alt="Logo 4" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/puninar.png" alt="Logo 5" draggable="false">
+                </div>
+                <div class="logo">
+                    <img src="../Chelo Tasnim Haryono_Bahan/images/niagahoster.png" alt="Logo 6" draggable="false">
+                </div>
+            </div>
+            <div class="scroll-shade"></div>
+        </div>
+
+        <!-- Ulasan Individual -->
+        <div class="review-container">
+            <div class="review-card" style="--i: 1">
+                <div class="review-wrapper">
+                    <div class="person">
+                        <img src="../Chelo Tasnim Haryono_Bahan/images/it.jpg" alt="Pengguna 1" draggable="false">
+                        <div class="fade-layer">
+                            <div class="rate-box">
+                                <p>Kerja Luar Negeri</p>
+                                <i class="bx bxs-star favorite-mark"></i>
+                            </div>
+                            <div class="sector-content">
+                                <p>Silvia Jane</p>
+                                <span>She/Her - Fresh Graduate</span>
+                            </div>
+                        </div>
+                        <div class="glass-layer"></div>
+                    </div>
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="badge-group">
+                                <div class="badge">
+                                    <i class='bx bx-filter'></i>
+                                    Kerja Luar Negeri
+                                </div>
+                                <div class="badge">
+                                    <i class='bx bx-filter'></i>
+                                    Sektor IT
+                                </div>
+                                <div class="badge">
+                                    <i class='bx bx-filter'></i>
+                                    Pekerjaan Tetap
+                                </div>
+                            </div>
+                            <div class="work-company">
+                                <label>Diterima Bekerja Sebagai</label>
+                                <p>IT Service Manager</p>
+                                <span>Newwave Solutions Japan</span>
+                            </div>
+                        </div>
+                        <div class="review-poin">
+                            <div class="review-desc">
+                                <span>21 September 2023</span>
+                                <p>
+                                    bisakerja.com berhasil membawa saya bekerja di Jepang! Layanan pencarian kerja luar
+                                    negeri benar benar memberikan referensi yang menarik. Pengisian portofolio sebagai
+                                    pendukung sangat mudah, proses pengajuan kerja luar negeri pun melewati prosedur
+                                    keamanan yang cepat.
+                                </p>
+                            </div>
+                            <div class="review-stat">
+                                <div class="review-stat-col">
+                                    <span class="score">4.7</span>
+                                    <span class="label">Kemudahan Mencari Kerja</span>
+                                </div>
+                                <div class="review-stat-col">
+                                    <span class="score">4.5</span>
+                                    <span class="label">Keamanan Kerja Luar Negeri</span>
+                                </div>
+                                <div class="review-stat-col">
+                                    <span class="score">4.9</span>
+                                    <span class="label">Kesesuaian Upah Bagi Pekerja</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bricks-bg">
+                            <div class="bricks-row">
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                            </div>
+                            <div class="bricks-row">
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                            </div>
+                            <div class="bricks-row">
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                            </div>
+                            <div class="brick-shine"></div>
+                            <div class="bricks-shade"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card" style="--i: 2">
+                <div class="review-wrapper">
+                    <div class="person">
+                        <img src="../Chelo Tasnim Haryono_Bahan/images/magang.jpg" alt="Pengguna 1" draggable="false">
+                        <div class="fade-layer">
+                            <div class="rate-box">
+                                <p>Proyek & Kerja Remote</p>
+                                <i class="bx bxs-star favorite-mark"></i>
+                            </div>
+                            <div class="sector-content">
+                                <p>Andi Rifki</p>
+                                <span>He/Him - Siswa Sekolah Kejuruan</span>
+                            </div>
+                        </div>
+                        <div class="glass-layer"></div>
+                    </div>
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="badge-group">
+                                <div class="badge">
+                                    <i class='bx bx-filter'></i>
+                                    Proyek & Kerja Remote
+                                </div>
+                                <div class="badge">
+                                    <i class='bx bx-filter'></i>
+                                    Sektor IT
+                                </div>
+                                <div class="badge">
+                                    <i class='bx bx-filter'></i>
+                                    Bayaran Perjam
+                                </div>
+                            </div>
+                            <div class="work-company">
+                                <label>Menyelesaikan</label>
+                                <p>149 Proyek</p>
+                                <span>Pengembangan Website</span>
+                            </div>
+                        </div>
+                        <div class="review-poin">
+                            <div class="review-desc">
+                                <span>19 Agustus 2023</span>
+                                <p>
+                                    Situs yang overpower! Mulai dari proyek kecil di bisakerja.com, saya bisa
+                                    mengembangkan
+                                    portofolio hingga dapat memenangkan tender di beberapa proyek besar dalam situs ini.
+                                    Setiap proyek pun saya mendapat jaminan kesesuaian harga proyek.
+                                </p>
+                            </div>
+                            <div class="review-stat">
+                                <div class="review-stat-col">
+                                    <span class="score">4.3</span>
+                                    <span class="label">Kemudahan Mencari Proyek</span>
+                                </div>
+                                <div class="review-stat-col">
+                                    <span class="score">4.5</span>
+                                    <span class="label">Keamanan Prosedur Proyek</span>
+                                </div>
+                                <div class="review-stat-col">
+                                    <span class="score">5.0</span>
+                                    <span class="label">Kesesuaian Kontrak Proyek</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bricks-bg">
+                            <div class="bricks-row">
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                            </div>
+                            <div class="bricks-row">
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                            </div>
+                            <div class="bricks-row">
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                            </div>
+                            <div class="brick-shine"></div>
+                            <div class="bricks-shade"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card" style="--i: 3">
+                <div class="review-wrapper">
+                    <div class="person">
+                        <img src="../Chelo Tasnim Haryono_Bahan/images/disabilitas.jpg" alt="Pengguna 1"
+                            draggable="false">
+                        <div class="fade-layer">
+                            <div class="rate-box">
+                                <p>Lowongan Disabilitas</p>
+                                <i class="bx bxs-star favorite-mark"></i>
+                            </div>
+                            <div class="sector-content">
+                                <p>Yunita Rani</p>
+                                <span>She/Her - Fresh Graduate</span>
+                            </div>
+                        </div>
+                        <div class="glass-layer"></div>
+                    </div>
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="badge-group">
+                                <div class="badge">
+                                    <i class='bx bx-filter'></i>
+                                    Lowongan Disabilitas
+                                </div>
+                                <div class="badge">
+                                    <i class='bx bx-filter'></i>
+                                    Sektor Teknik
+                                </div>
+                                <div class="badge">
+                                    <i class='bx bx-filter'></i>
+                                    Pekerjaan Tetap
+                                </div>
+                            </div>
+                            <div class="work-company">
+                                <label>Diterima Bekerja Sebagai</label>
+                                <p>Engineer Quality Assurance</p>
+                                <span>PT Haier Electrical Appliences Indonesia</span>
+                            </div>
+                        </div>
+                        <div class="review-poin">
+                            <div class="review-desc">
+                                <span>29 Agustus 2023</span>
+                                <p>
+                                    bisakerja.com benar benar memahami kebutuhan penggunanya. Sebuah situs yang sangat
+                                    membantu hidup saya, menjamin keamanan dan keadilan bagi disabilitas seperti saya
+                                    untuk
+                                    tetap mendapatkan kerja yang layak. Situs yang luar biasa!
+                                </p>
+                            </div>
+                            <div class="review-stat">
+                                <div class="review-stat-col">
+                                    <span class="score">4.5</span>
+                                    <span class="label">Kemudahan Mencari Kerja</span>
+                                </div>
+                                <div class="review-stat-col">
+                                    <span class="score">4.7</span>
+                                    <span class="label">Keamanan Pencari Kerja</span>
+                                </div>
+                                <div class="review-stat-col">
+                                    <span class="score">5.0</span>
+                                    <span class="label">Kesesuaian Upah Bagi Pekerja</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bricks-bg">
+                            <div class="bricks-row">
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                            </div>
+                            <div class="bricks-row">
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                            </div>
+                            <div class="bricks-row">
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                                <div class="brick"></div>
+                            </div>
+                            <div class="brick-shine"></div>
+                            <div class="bricks-shade"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Sesi Pertanyaan Umum -->
+    <div id="pertanyaan" class="page navigable" data-section="4" data-anchor="180" data-min-up="460"
+        data-max-down="500">
+
+        <header>
+            <h2>
+                <b>Pertanyaan</b>
+                <br>
+                Umum Dari Pengguna
+            </h2>
+        </header>
+
+        <!-- Daftar Pertanyaan Umum -->
+        <div class="q-container">
+            <div class="q-box" data-q-num="1" data-q-answer="
+            Ya, kami sama sekali tidak mengambil keuntungan keuangan dari pencari kerja dan proyek.|
+            Kami mendapatkan keuntungan dari jalan lain seperti sponsor, biaya admin dari pemilik proyek dan lainnya.
+            ">
+                <p>Apakah semua layanan bisakerja itu gratis?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="2" data-q-answer="
+            Tentu, beberapa perusahaan yang menggunakan situs bisakerja dalam mencari para pekerja baru terkadang memberi kesempatan bekerja tetap pada perusahaannya.|Situs kami sendiri tidak membatasi terkait status bekerja yang diiklankan oleh perusahaan.
+            ">
+                <p>Apakah ada lowongan pekerjaan tetap?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="3" data-q-answer="
+            Seluruh lowongan pekerjaan dan penawaran proyek yang ada sudah diverifikasi oleh tim bisakerja, jadi anda tidak perlu ragu untuk menggali informasi lebih dalam di iklan lowongan pekerjaan atau proyek.|Namun perlu diingat bahwa keamanan pengguna tetap berada di tangan anda sendiri, selalu bijak dan taati prosedur yang ada dalam menggunakan situs ini.
+            ">
+                <p>Bagaimana cara melihat lowongan asli atau palsu?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="4" data-q-answer="
+            Sangat bisa, lowongan disabilitas merupakan salah satu layanan unggulan kami dalam upaya memahami kebutuhan pengguna. Beberapa perusahaan ada yang membuka lowongan untuk disabilitas, bahkan sebuah proyek remote benar benar terbuka untuk disabilitas.
+            ">
+                <p>Disabilitas apa bisa melamar pekerjaan tetap?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="5" data-q-answer="
+            Aman, beberapa program kerja luar negeri merupakan rekomendasi dari Kemnaker Indonesia. Kami juga berupaya mandiri dalam mencari program kerja luar negeri kedepannya.|Kami menyarakan untuk selalu mendaftarkan asuransi bila ingin mengikuti program ini.
+            ">
+                <p>Layanan kerja luar negeri apakah aman?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="6" data-q-answer="
+            Tidak harus pakai laptop, bisakerja merupakan sebuah situs di internet, jadi bisa dibuka di berbagai platform.
+            ">
+                <p>Untuk menggunakan apa harus pakai laptop?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="7" data-q-answer="
+            Bisa, melalui proposal yang anda ajukan, dengan terbatas anda masih dapat menghubungi perusahaan melalui situs atau kontak lainnya.
+            ">
+                <p>Apakah saya bisa langsung menghubungi perusahaan?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="8" data-q-answer="
+            Terjamin, karna setiap penawaran proyek sudah diverifikasi oleh tim bisakerja, namum tetap selalu bijak dan awas sebagai pengguna dalam setiap transaksi.|Jika ada pelanggaran dalam proyek segera hubungi tim kami.
+            ">
+                <p>Kontrak proyek apakah terjamin?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="9" data-q-answer="
+            Tidak selalu, ijazah merupakan persyaratan formal yang mungkin diminta oleh sebuah perusahaan namun tidak semuanya. Terkadang perusahaan lebih berfokus pada apa keahlian dan pencapaian anda.|Proyek sendiri terkadang lebih fleksibel mengenai persyaratan ini.
+            ">
+                <p>Memilih sektor kerja apakah harus sesuai ijazah?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="10" data-q-answer="
+            Pada beberapa program, seperti layanan kerja luar negeri yang direkomendasikan oleh kemnaker.|Namum anda tidak perlu ragu dengan bisakerja, karna kami telah dipercaya oleh beberapa perusahaan besar.
+            ">
+                <p>Apakah situs ini kerja sama dengan kemnaker?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="11" data-q-answer="
+            Sangat bisa, beberapa perusahaan memiliki persyaratan minimum bagi pelajar, selain itu, proyek menjadi pilihan yang menjanjikan bagi pelajar yang kompeten.|Sebagai contoh pengguna kami Andi Rifki seorang pelajar SMK berhasil menyelesaikan 149 proyek di bidang pengembangan website dan menghasilkan sekitar Rp 497.000.000,00
+            ">
+                <p>Pelajar apakah bisa mencari kerja disini?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="q-box" data-q-num="12" data-q-answer="
+            Bisa, ada beberapa permintaan dari perusahaan luar yang kami verifikasi. Ini masih menjadi hal yang khusus bagi pemberi proyek, namun sebuah hal umum bagi pencari proyek.|Tidak ada masalah proyek tersebut dari luar atau dalam negeri.|Anda dapat mengambil proyek tersebut dengan jaminan keamanan yang sama.
+            ">
+                <p>Proyek apa juga bisa didapat dari luar negeri?</p>
+                <i class="bx bx-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Jawaban Pertanyaan -->
+        <div id="q-modal">
+            <div class="q-modal-content">
+                <div class="q-modal-rib">
+                    <div class="title"></div>
+                    <div id="oke-btn" onclick="closeQuestion()">Oke</div>
+                </div>
+                <div class="q-modal-answer">
+                    <div style="--delay: 1" id="your-q"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Akhir Laman -->
+    <footer>
+        <div class="floating-footer">
+            <div class="desc">
+                <h2>Cari Lowongan Kerja</h2>
+                <ul>
+                    <li>
+                        <i class="bx bx-check"></i>
+                        Layanan Gratis
+                    </li>
+                    <li>
+                        <i class="bx bx-check"></i>
+                        Lowongan Terpercaya
+                    </li>
+                    <li>
+                        <i class="bx bx-check"></i>
+                        Penyesuaian Pencarian
+                    </li>
+                </ul>
+            </div>
+            <div class="action">
+                <button>Cari Lowongan</button>
+            </div>
+        </div>
+        <div class="footer-content">
+            <ul>
+                <p>Bisa Kerja</p>
+                <li>
+                    <a data-section="1" onclick="toPoint(this)">Fitur</a>
+                </li>
+                <li>
+                    <a data-section="2" onclick="toPoint(this)">Panduan</a>
+                </li>
+                <li>
+                    <a data-section="3" onclick="toPoint(this)">Ulasan</a>
+                </li>
+                <li>
+                    <a data-section="4" onclick="toPoint(this)">Pertanyaan</a>
+                </li>
+            </ul>
+            <ul>
+                <p>Layanan</p>
+                <li>
+                    <a>Lowongan Kerja</a>
+                </li>
+                <li>
+                    <a>Lowongan Disabilitas</a>
+                </li>
+                <li>
+                    <a>Kerja Luar Negeri</a>
+                </li>
+                <li>
+                    <a>Proyek Kerja Remote</a>
+                </li>
+            </ul>
+            <ul>
+                <p>Unggulan</p>
+                <li>
+                    <a>Sektor Teknik</a>
+                </li>
+                <li>
+                    <a>Sektor Manajemen</a>
+                </li>
+                <li>
+                    <a>Sektor Keuangan</a>
+                </li>
+                <li>
+                    <a>Sektor Perdagangan</a>
+                </li>
+                <li>
+                    <a>Sektor IT</a>
+                </li>
+            </ul>
+            <ul>
+                <p>Pengguna</p>
+                <li>
+                    <a>Masuk / Daftar</a>
+                </li>
+                <li>
+                    <a>Profile Akun</a>
+                </li>
+                <li>
+                    <a>Profile Kandidat</a>
+                </li>
+            </ul>
+            <ul>
+                <p>Sosial</p>
+                <li>
+                    <a>Instagram</a>
+                </li>
+                <li>
+                    <a>LinkedIn</a>
+                </li>
+                <li>
+                    <a>Facebook</a>
+                </li>
+                <li>
+                    <a>Twitter</a>
+                </li>
+            </ul>
+            <ul>
+                <p>Terkait</p>
+                <li>
+                    <a>Perusahaan</a>
+                </li>
+                <li>
+                    <a>Pekerja Tetap</a>
+                </li>
+                <li>
+                    <a>Pekerja Lepas</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>Hak Cipta &copy; 2023 Bisa Kerja</p>
+            <p>Hubungi Kami</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
