@@ -35,8 +35,8 @@
         </div>
 
         <!-- Navigasi Halaman -->
-        <div class="nav-item nav-link">
-            <a data-section="1" onclick="toPoint(this)">Fitur</a>
+        <div class="nav-item nav-link navigation-link">
+            <a data-section="1" onclick="toPoint(this)">Layanan</a>
             <a data-section="2" onclick="toPoint(this)">Panduan</a>
             <a data-section="3" onclick="toPoint(this)">Ulasan</a>
             <a data-section="4" onclick="toPoint(this)">Pertanyaan</a>
@@ -44,12 +44,50 @@
 
         <!-- Interaksi Lain Bagi Pengguna -->
         <div class="nav-item nav-interface">
+            <div class="hamburger-menu" onclick="toggleNav()">
+                <i class="bx bx-menu-alt-right"></i>
+            </div>
             <div class="ui-setting">
                 <i class="bx bx-cog"></i>
             </div>
-            <a href="" class="btn on">Masuk</a>
+            <a class="btn on">Masuk</a>
         </div>
     </nav>
+
+
+
+    <!-- Tab Navigasi -->
+    <div class="nav-tab">
+        <div class="tab-rib" onclick="toggleNav()">
+            <i class="bx bx-x"></i>
+            <p>Menu Utama</p>
+        </div>
+        <div class="tab-header">
+            <img src="../Chelo Tasnim Haryono_Bahan/icons/app-brand.png" alt="Bisa Kerja Logo" draggable="false">
+        </div>
+        <div class="tab-list navigation-link">
+            <div class="box-list">
+                <a data-section="1" onclick="toPoint(this)">Layanan</a>
+                <i class="bx bx-customize"></i>
+            </div>
+            <div class="box-list">
+                <a data-section="2" onclick="toPoint(this)">Panduan</a>
+                <i class="bx bx-message-alt-error"></i>
+            </div>
+            <div class="box-list">
+                <a data-section="3" onclick="toPoint(this)">Ulasan</a>
+                <i class="bx bx-user-pin"></i>
+            </div>
+            <div class="box-list">
+                <a data-section="4" onclick="toPoint(this)">Pertanyaan</a>
+                <i class="bx bx-chat"></i>
+            </div>
+        </div>
+        <div class="tab-action">
+            <div class="btn on">Masuk</div>
+            <div class="btn">Daftar</div>
+        </div>
+    </div>
 
 
 
@@ -74,8 +112,8 @@
                 </p>
             </div>
             <div class="typo-interface">
-                <a href="" class="btn on">Cari Lowongan</a>
-                <a class="btn" data-section="1" onclick="toPoint(this)">Lebih Lanjut</a>
+                <a onclick="directTo('job_list/index.html')" class="btn on">Cari Pekerjaan</a>
+                <a class="btn" data-section="1" onclick="directTo('job_list/proyek.html')">Cari Proyek</a>
             </div>
         </div>
 
@@ -875,7 +913,7 @@
                 </ul>
             </div>
             <div class="action">
-                <button>Cari Lowongan</button>
+                <button onclick="directTo('job_list/index.html')">Cari Lowongan</button>
             </div>
         </div>
         <div class="footer-content">
@@ -897,34 +935,34 @@
             <ul>
                 <p>Layanan</p>
                 <li>
-                    <a>Lowongan Kerja</a>
+                    <a onclick="directTo('job_list/index.html')">Lowongan Kerja</a>
                 </li>
                 <li>
-                    <a>Lowongan Disabilitas</a>
+                    <a onclick="directTo('job_list/index.html')">Lowongan Disabilitas</a>
                 </li>
                 <li>
-                    <a>Kerja Luar Negeri</a>
+                    <a onclick="directTo('job_list/index.html')">Kerja Luar Negeri</a>
                 </li>
                 <li>
-                    <a>Proyek Kerja Remote</a>
+                    <a onclick="directTo('job_list/proyek.html')">Proyek Kerja Remote</a>
                 </li>
             </ul>
             <ul>
                 <p>Unggulan</p>
                 <li>
-                    <a>Sektor Teknik</a>
+                    <a onclick="directTo('job_list/index.html')">Sektor Teknik</a>
                 </li>
                 <li>
-                    <a>Sektor Manajemen</a>
+                    <a onclick="directTo('job_list/index.html')">Sektor Manajemen</a>
                 </li>
                 <li>
-                    <a>Sektor Keuangan</a>
+                    <a onclick="directTo('job_list/index.html')">Sektor Keuangan</a>
                 </li>
                 <li>
-                    <a>Sektor Perdagangan</a>
+                    <a onclick="directTo('job_list/index.html')">Sektor Perdagangan</a>
                 </li>
                 <li>
-                    <a>Sektor IT</a>
+                    <a onclick="directTo('job_list/index.html')">Sektor IT</a>
                 </li>
             </ul>
             <ul>
@@ -957,13 +995,13 @@
             <ul>
                 <p>Terkait</p>
                 <li>
-                    <a>Perusahaan</a>
+                    <a onclick="directTo('job_list/index.html')">Perusahaan</a>
                 </li>
                 <li>
-                    <a>Pekerja Tetap</a>
+                    <a onclick="directTo('job_list/index.html')">Pekerja Tetap</a>
                 </li>
                 <li>
-                    <a>Pekerja Lepas</a>
+                    <a onclick="directTo('job_list/index.html')">Pekerja Lepas</a>
                 </li>
             </ul>
         </div>

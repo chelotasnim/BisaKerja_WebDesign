@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Chelo Tasnim Haryono_Bahan/icons/app-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../Chelo Tasnim Haryono_Bahan/plugins/boxicons-2.0.7/css/boxicons.min.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <title>Bisa Kerja | Cari Pekerjaan</title>
+</head>
+
+<body>
+    <!-- Loading Layer -->
+    <div class="loading-layer">
+        <div class="content">
+            <div class="icon">
+                <img src="../../Chelo Tasnim Haryono_Bahan/icons/app-brand.png" alt="Bisa Kerja Logo" draggable="false">
+            </div>
+            <div class="bg">
+                <i class="bx bx-message-square"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bar Pencarian -->
+    <nav>
+        <div class="nav-header">
+            <div class="info">
+                <i class="bx bx-info-circle"></i>
+                Pencarian Lowongan Tidak Dipungut Biaya
+            </div>
+            <div class="other-nav">
+                <a onclick="directTo('../index.html')">Layanan</a>
+                <a onclick="directTo('../index.html')">Panduan</a>
+                <a onclick="directTo('../index.html')">Ulasan</a>
+                <a onclick="directTo('../index.html')">Pertanyaan</a>
+            </div>
+        </div>
+        <div class="nav-content">
+            <div class="nav-label" onclick="directTo('../index.html')" style="cursor: pointer;">
+                <img class="app-image" src="../../Chelo Tasnim Haryono_Bahan/icons/app-brand.png" alt="Logo Bisa Kerja"
+                    draggable="false">
+            </div>
+            <div class="nav-search">
+                <p>Cari</p>
+                <div class="input-group">
+                    <div class="field">
+                        <i class="bx bx-search"></i>
+                        <input type="text" onkeyup="setField('search', this)"
+                            placeholder="Kata Kunci : Perusahaan / Jabatan">
+                    </div>
+                    <div class="search-tips">
+                        <p>Contoh :</p>
+                        <p>Pertamina</p>
+                        <p>Bank BRI</p>
+                        <p>Programmer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-action">
+                <div class="fav-mark">
+                    <i class="bx bx-bookmarks"></i>
+                </div>
+                <div class="hamburger-menu" onclick="toggleNav()">
+                    <i class="bx bx-menu-alt-right"></i>
+                </div>
+                <div class="btn-group">
+                    <a class="btn on">Masuk</a>
+                    <a class="btn">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Tab Navigasi -->
+    <div class="nav-tab">
+        <div class="tab-rib" onclick="toggleNav()">
+            <i class="bx bx-x"></i>
+            <p>Menu Utama</p>
+        </div>
+        <div class="tab-header">
+            <img src="../../Chelo Tasnim Haryono_Bahan/icons/app-brand.png" alt="Bisa Kerja Logo" draggable="false">
+        </div>
+        <div class="tab-list navigation-link">
+            <div class="box-list">
+                <a onclick="directTo('../index.html')">Laman Utama</a>
+                <i class="bx bx-customize"></i>
+            </div>
+            <div class="box-list">
+                <a>Lowongan Disimpan</a>
+                <i class="bx bx-bookmarks"></i>
+            </div>
+        </div>
+        <div class="tab-action">
+            <div class="btn on">Masuk</div>
+            <div class="btn">Daftar</div>
+        </div>
+    </div>
+
+
+
+    <!-- Daftar Lowongan -->
+    <div id="lowongan" class="dashboard">
+        <div id="filter">
+            <div class="filter-header">
+                <h1>Filter</h1>
+            </div>
+            <div class="filter-menu">
+                <div class="filter-dd active">
+                    <label>
+                        Sektor / Kategori
+                        <i class="bx bx-chevron-right"></i>
+                    </label>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('sektor', this)" name="sektor" value="manajemen">
+                        Manajemen
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('sektor', this)" name="sektor" value="keuangan">
+                        Keuangan
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('sektor', this)" name="sektor" value="perdagangan">
+                        Perdagangan
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('sektor', this)" name="sektor" value="teknik">
+                        Teknik
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('sektor', this)" name="sektor" value="it">
+                        IT
+                    </div>
+                </div>
+                <div class="filter-dd">
+                    <label>
+                        Lokasi
+                        <i class="bx bx-chevron-right"></i>
+                    </label>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('lokasi', this)" name="lokasi" value="jabodetabek">
+                        Jabodetabek
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('lokasi', this)" name="lokasi" value="jawa barat">
+                        Jawa Barat
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('lokasi', this)" name="lokasi" value="jawa tengah">
+                        Jawa Tengah
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('lokasi', this)" name="lokasi" value="jawa timur">
+                        Jawa Timur
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('lokasi', this)" name="lokasi" value="bali">
+                        Bali
+                    </div>
+                </div>
+                <div class="filter-dd active">
+                    <label>
+                        Gaji
+                        <i class="bx bx-chevron-right"></i>
+                    </label>
+                    <div class="filter-list">
+                        <div class="input-w-holder">
+                            <input type="number" onkeyup="setField('gaji_minimum', this)" placeholder="0">
+                            <div class="holder">Rp</div>
+                        </div>
+                    </div>
+                    <div class="filter-list">
+                        <span>Sampai Dengan</span>
+                    </div>
+                    <div class="filter-list">
+                        <div class="input-w-holder">
+                            <input type="number" onkeyup="setField('gaji_maximum', this)" placeholder="0">
+                            <div class="holder">Rp</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-dd">
+                    <label>
+                        Tipe
+                        <i class="bx bx-chevron-right"></i>
+                    </label>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('tipe', this)" name="tipe" value="kerja tetap">
+                        Pekerja Tetap
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('tipe', this)" name="tipe" value="kontrak">
+                        Kontrak
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('tipe', this)" name="tipe" value="magang">
+                        Magang
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="close-filter" class="btn" onclick="slideFilter()">
+            <i class="bx bx-x"></i>
+        </a>
+        <div id="box-container">
+            <div class="btn-group">
+                <a class="btn on">Pekerjaan</a>
+                <a class="btn">Proyek</a>
+                <a class="btn" onclick="slideFilter()">
+                    <i class="bx bx-menu-alt-right"></i>
+                </a>
+            </div>
+            <div class="box" data-c="pt amerta indah otsuka" data-j="relationship manager manajer" data-s="manajemen"
+                data-l="jawa timur" data-p1="0" data-p2="0" data-t="kerja tetap">
+                <div class="box-logo">
+                    <div class="company-logo">
+                        <img src="../../Chelo Tasnim Haryono_Bahan/images/otsuka.png" alt="Logo Perusahaan"
+                            draggable="false">
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="main">
+                        <h2>Relationship Manager</h2>
+                        <p>PT Amerta Indah Otsuka</p>
+                        <span>Pasuruan, Jawa Timur</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Gaji Dirahasiakan
+                        </li>
+                        <li>
+                            <i class="bx bx-briefcase"></i>
+                            Kerja Tetap
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            21 September 2023
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-c="pt amerta indah otsuka" data-j="chief engineer" data-s="teknik" data-l="jawa timur"
+                data-p1="23000000" data-p2="26000000" data-t="kontrak">
+                <div class="box-logo">
+                    <div class="company-logo">
+                        <img src="../../Chelo Tasnim Haryono_Bahan/images/otsuka.png" alt="Logo Perusahaan"
+                            draggable="false">
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="main">
+                        <h2>Chief Engineer</h2>
+                        <p>PT Amerta Indah Otsuka</p>
+                        <span>Pasuruan, Jawa Timur</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 23.000.000 - Rp 26.000.000
+                        </li>
+                        <li>
+                            <i class="bx bx-briefcase"></i>
+                            Kontrak
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            27 September 2023
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-c="pt paiton operation" data-j="crane operator" data-s="teknik" data-l="jawa timur"
+                data-p1="8000000" data-p2="12000000" data-t="kontrak">
+                <div class="box-logo">
+                    <div class="company-logo">
+                        <img src="../../Chelo Tasnim Haryono_Bahan/images/pomi.png" alt="Logo Perusahaan"
+                            draggable="false">
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="main">
+                        <h2>Crane Operator</h2>
+                        <p>PT Paiton Operation</p>
+                        <span>Probolinggo, Jawa Timur</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 8.000.000 - Rp 12.000.000
+                        </li>
+                        <li>
+                            <i class="bx bx-briefcase"></i>
+                            Kontrak
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            02 Oktober 2023
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-c="pt puninar logistics" data-j="supervisor" data-s="manajemen" data-l="jabodetabek"
+                data-p1="7000000" data-p2="13000000" data-t="kontrak">
+                <div class="box-logo">
+                    <div class="company-logo">
+                        <img src="../../Chelo Tasnim Haryono_Bahan/images/puninar.png" alt="Logo Perusahaan"
+                            draggable="false">
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="main">
+                        <h2>Supervisor</h2>
+                        <p>PT Puninar Logistics</p>
+                        <span>DKI Jakarta</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 7.000.000 - Rp 13.000.000
+                        </li>
+                        <li>
+                            <i class="bx bx-briefcase"></i>
+                            Kontrak
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            09 Oktober 2023
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="not-found">
+                <img src="../../Chelo Tasnim Haryono_Bahan/icons/c-icon-10.png" alt="Tidak Ditemukan" draggable="false">
+                <p>Lowongan Tidak Ditemukan</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+</body>
+
+</html>

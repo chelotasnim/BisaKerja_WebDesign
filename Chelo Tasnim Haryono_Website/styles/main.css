@@ -21,6 +21,10 @@ html {
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+}
+
 
 
 /* Variable */
@@ -54,7 +58,7 @@ html {
     align-items: center;
     background: var(--bg-main);
     transition: .5s;
-    z-index: 10000;
+    z-index: 1000000;
     opacity: 1;
 }
 
@@ -65,6 +69,7 @@ html {
 .loading-layer .content {
     position: relative;
     display: flex;
+    transform: translateX(-25px);
 }
 
 .loading-layer img {
@@ -119,7 +124,7 @@ html {
 
 /* Bar Navigasi */
 nav {
-    position: sticky;
+    position: fixed;
     display: flex;
     top: 0;
     left: 0;
@@ -158,10 +163,14 @@ nav {
     gap: 32px;
 }
 
-.ui-setting {
+.nav-interface i {
     cursor: pointer;
     font-size: 20px;
     color: var(--fade-text);
+}
+
+.nav-interface div:first-child i {
+    font-size: 24px;
 }
 
 .btn {
@@ -210,6 +219,101 @@ nav {
 
 
 
+/* Tab Navigasi  */
+.nav-tab {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-main);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+    z-index: 10000;
+}
+
+.nav-tab.active {
+    top: 0;
+}
+
+.tab-rib,
+.tab-list,
+.tab-action {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.tab-rib {
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 18px;
+    align-items: center;
+    border-bottom: 1px solid var(--super-fade);
+    cursor: pointer;
+    gap: 8px;
+    font-size: 32px;
+    color: var(--thick-text);
+}
+
+.tab-rib p {
+    margin-top: -2px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.tab-header,
+.tab-list,
+.tab-action {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--super-fade);
+}
+
+.tab-header img {
+    margin-left: 14px;
+    width: 150px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.tab-list {
+    padding-top: calc(42px);
+    padding-bottom: calc(18px);
+}
+
+.box-list {
+    display: flex;
+    margin-bottom: 32px;
+    align-items: center;
+    font-size: 20px;
+    color: var(--normal-text);
+    gap: 8px;
+}
+
+.box-list a {
+    order: 1;
+    margin-top: -2px;
+    font-size: 16px;
+}
+
+.box-list a.visited,
+.box-list a.visited~i {
+    color: var(--primary-green);
+}
+
+.tab-action {
+    display: flex;
+    border: none;
+    gap: 5px;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+
+
 /* Umum */
 .page {
     position: relative;
@@ -227,6 +331,7 @@ nav {
 /* Hero */
 #hero {
     display: flex;
+    padding-top: 82.6px;
     justify-content: space-between;
     align-items: center;
     min-height: calc(100vh - 85px + 40px);
@@ -1092,7 +1197,7 @@ footer {
 
 @media(max-width: 1000px) {
     .loading-layer .content {
-        transform: scale(.8);
+        transform: scale(.8) translateX(-25px);
     }
 
     .review-card {
@@ -1180,6 +1285,18 @@ footer {
         display: none;
     }
 
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-interface {
+        gap: 14px;
+    }
+
+    .nav-interface .btn {
+        margin-left: 6px;
+    }
+
     .feature-container {
         gap: 54px 0;
     }
@@ -1214,6 +1331,10 @@ footer {
     .app-image {
         width: 75px;
         height: 40px;
+    }
+
+    #hero {
+        padding-top: 54px;
     }
 
     #hero .typo-heading {
@@ -1306,12 +1427,12 @@ footer {
     }
 
     #hero .typo-heading h1 {
-        line-height: 32px;
-        font-size: 18px;
+        line-height: 38px;
+        font-size: 24;
     }
 
     #hero .tagline-content {
-        font-size: 32px;
+        font-size: 40px;
     }
 
     #hero .typo-desc {

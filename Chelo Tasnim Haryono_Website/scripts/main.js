@@ -1,3 +1,5 @@
+// Halaman Utama
+
 // Loading Layer
 const loading_layer = document.querySelector('.loading-layer');
 function setLoading() {
@@ -21,8 +23,9 @@ setTimeout(removeLoading, 700);
 
 
 // Anchor Point
-const nav_anchor = document.querySelectorAll('.nav-link a');
+const nav_anchor = document.querySelectorAll('.navigation-link a');
 if (nav_anchor[0] != undefined) {
+    const tab_nav = document.querySelector('.nav-tab');
 
     // Inisiasi Koordinat Sesi Laman
     let sections = null;
@@ -50,6 +53,9 @@ if (nav_anchor[0] != undefined) {
         let point = document.querySelector(`.navigable[data-section="${e.getAttribute('data-section')}"]`);
         document.body.scrollTop = point.offsetTop - point.getAttribute('data-anchor');
         document.documentElement.scrollTop = point.offsetTop - point.getAttribute('data-anchor');
+
+        tab_nav.style.transitionDelay = '.5s';
+        tab_nav.classList.remove('active');
     };
 
     // Navigasi Dengan Scroll Laman
@@ -61,11 +67,20 @@ if (nav_anchor[0] != undefined) {
 
             section_point.forEach(section => {
                 if (scroll_count >= (section.top - section.minUp) && scroll_count < (section.height - section.maxDown)) {
-                    document.querySelector(`.nav-link a[data-section="${section.index}`).classList.add('visited');
+                    const current_nav_link = document.querySelectorAll(`.navigation-link a[data-section="${section.index}`);
+                    current_nav_link.forEach(link => {
+                        link.classList.add('visited');
+                    });
                 };
             });
         }
     );
+
+    // Tab Navigasi
+    function toggleNav() {
+        tab_nav.style.transitionDelay = '0s';
+        tab_nav.classList.toggle('active');
+    };
 };
 
 
@@ -178,6 +193,7 @@ if (use_stats[0] != undefined) {
             }
         };
         setInterval(countUp, 2000);
+        setTimeout(countUp, 1000);
     });
 };
 
@@ -267,4 +283,126 @@ if (q_box[0] != undefined) {
         };
         setTimeout(removeBackAction, 300);
     };
+};
+
+
+
+// Handle Perpindahan Laman
+function directTo(url) {
+    setLoading();
+    setTimeout(() => {
+        window.location = url;
+    }, 750);
+};
+
+
+
+
+
+// Halaman Daftar Lowongan
+
+// Drowpdown Filter
+const filter_dd = document.querySelectorAll('.filter-dd label');
+if (filter_dd[0] != undefined) {
+    filter_dd.forEach(dd => {
+        dd.addEventListener(
+            'click', function () {
+                dd.parentElement.classList.toggle('active');
+            }
+        );
+    });
+};
+
+
+
+// Filter Lowongan
+const lowongan = document.querySelector('#lowongan');
+if (lowongan != undefined) {
+    const loker = document.querySelectorAll('.box');
+    const not_found = document.querySelector('.not-found');
+    let filter = {
+        search: '',
+        sektor: '',
+        lokasi: '',
+        gaji_minimum: '',
+        gaji_maximum: '',
+        tipe: ''
+    };
+
+    function doFilter() {
+        let found = false;
+        loker.forEach(box => {
+            let display = false;
+
+            const params = {
+                search: box.getAttribute('data-c') + box.getAttribute('data-j'),
+                sektor: box.getAttribute('data-s'),
+                lokasi: box.getAttribute('data-l'),
+                gaji_minimum: box.getAttribute('data-p1'),
+                gaji_maximum: box.getAttribute('data-p2'),
+                tipe: box.getAttribute('data-t')
+            };
+
+            let count_true = 0;
+            let count_isset = 0;
+            for (let key in filter) {
+                if (filter[key] != '') {
+                    count_isset++;
+                    if (key === 'search') {
+                        if (params[key].indexOf(filter[key]) > -1) {
+                            count_true++;
+                        };
+                    } else if (key === 'gaji_minimum' || key === 'gaji_maximum') {
+                        if (Number(filter['gaji_minimum']) <= Number(params['gaji_minimum']) && Number(filter['gaji_maximum']) >= Number(params['gaji_maximum'])) {
+                            count_true++;
+                        };
+                    } else {
+                        if (filter[key].indexOf(params[key]) > -1) {
+                            count_true++;
+                        };
+                    };
+                };
+            };
+
+            if (count_true === count_isset) {
+                display = true;
+            };
+
+            if (display === true) {
+                box.style.display = 'flex';
+                found = true;
+            } else {
+                box.style.display = 'none';
+            };
+        });
+
+        if (found === false) {
+            not_found.style.display = 'flex';
+        } else {
+            not_found.style.display = 'none';
+        };
+    };
+
+    function setField(poin, e) {
+        filter[poin] = e.value;
+        doFilter();
+    };
+
+    function setFilter(poin, e) {
+        if (e.checked === true) {
+            filter[poin] += e.value;
+        } else {
+            filter[poin] = filter[poin].replace(e.value, '');
+        };
+        filter[poin] = filter[poin].trim();
+
+        doFilter();
+    };
+};
+
+
+
+// Collapse Filter
+function slideFilter() {
+    document.querySelector('#filter').classList.toggle('active');
 };
