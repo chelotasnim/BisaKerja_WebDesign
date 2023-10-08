@@ -230,11 +230,25 @@ nav {
 
 .nav-content .fav-mark,
 .hamburger-menu {
+    position: relative;
     max-height: 20px;
     padding-right: 24px;
     border-right: 1px solid var(--fade-2);
+    cursor: pointer;
     font-size: 20px;
     color: var(--normal-text);
+}
+
+.notif-circle {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgb(225, 0, 0);
+    z-index: 10;
 }
 
 .nav-action .btn-group {
@@ -553,6 +567,11 @@ nav {
     gap: 24px;
 }
 
+.box[data-f=true] .box-act .btn:first-child {
+    background: var(--shadow-green);
+    color: var(--primary-green);
+}
+
 .box-act {
     position: absolute;
     display: flex;
@@ -626,6 +645,8 @@ nav {
     align-items: center;
     padding: 100px 0;
     background: var(--bg-secondary);
+    line-height: 32px;
+    text-align: center;
     font-weight: 500;
     font-size: 20px;
     color: var(--fade-text);
@@ -753,6 +774,11 @@ nav {
 
     .box li {
         font-size: 12px;
+    }
+
+    .not-found {
+        line-height: 24px;
+        font-size: 16px;
     }
 }
 

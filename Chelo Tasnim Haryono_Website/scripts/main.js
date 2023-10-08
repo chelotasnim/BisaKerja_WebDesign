@@ -320,13 +320,16 @@ const lowongan = document.querySelector('#lowongan');
 if (lowongan != undefined) {
     const loker = document.querySelectorAll('.box');
     const not_found = document.querySelector('.not-found');
+    const not_found2 = document.querySelector('.not-found.type-2');
+    const notif_circle = document.querySelector('.notif-circle');
     let filter = {
         search: '',
         sektor: '',
         lokasi: '',
         gaji_minimum: '',
         gaji_maximum: '',
-        tipe: ''
+        tipe: '',
+        fav: 'false'
     };
 
     function doFilter() {
@@ -340,7 +343,8 @@ if (lowongan != undefined) {
                 lokasi: box.getAttribute('data-l'),
                 gaji_minimum: box.getAttribute('data-p1'),
                 gaji_maximum: box.getAttribute('data-p2'),
-                tipe: box.getAttribute('data-t')
+                tipe: box.getAttribute('data-t'),
+                fav: box.getAttribute('data-f')
             };
 
             let count_true = 0;
@@ -354,6 +358,12 @@ if (lowongan != undefined) {
                         };
                     } else if (key === 'gaji_minimum' || key === 'gaji_maximum') {
                         if (Number(filter['gaji_minimum']) <= Number(params['gaji_minimum']) && Number(filter['gaji_maximum']) >= Number(params['gaji_maximum'])) {
+                            count_true++;
+                        };
+                    } else if (key === 'fav') {
+                        if (filter[key] === params[key]) {
+                            count_true++;
+                        } else if (params[key] === 'true') {
                             count_true++;
                         };
                     } else {
@@ -376,11 +386,42 @@ if (lowongan != undefined) {
             };
         });
 
-        if (found === false) {
+        if (found === false && filter.fav === 'false') {
             not_found.style.display = 'flex';
+        } else if (found === false && filter.fav === 'true') {
+            not_found2.style.display = 'flex';
         } else {
             not_found.style.display = 'none';
+            not_found2.style.display = 'none';
         };
+    };
+
+    function setFav(e) {
+        if (e.parentElement.parentElement.getAttribute('data-f') == 'false') {
+            e.parentElement.parentElement.setAttribute('data-f', 'true');
+        } else {
+            e.parentElement.parentElement.setAttribute('data-f', 'false');
+        };
+
+        if (document.querySelectorAll('.box[data-f="true"]').length > 0) {
+            notif_circle.style.display = 'block';
+        } else {
+            notif_circle.style.display = 'none';
+        };
+
+        doFilter();
+    };
+
+    function toggleFav() {
+        if (filter.fav === 'true') {
+            filter.fav = 'false';
+            notif_circle.parentElement.style.color = 'rgb(100, 100, 100)';
+        } else {
+            filter.fav = 'true';
+            notif_circle.parentElement.style.color = 'rgb(39, 174, 96)';
+        };
+
+        doFilter();
     };
 
     function setField(poin, e) {

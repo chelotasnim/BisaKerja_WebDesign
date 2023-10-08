@@ -61,8 +61,9 @@
                 </div>
             </div>
             <div class="nav-action">
-                <div class="fav-mark">
+                <div class="fav-mark" onclick="toggleFav()">
                     <i class="bx bx-bookmarks"></i>
+                    <div class="notif-circle"></div>
                 </div>
                 <div class="hamburger-menu" onclick="toggleNav()">
                     <i class="bx bx-menu-alt-right"></i>
@@ -216,7 +217,7 @@
                 </a>
             </div>
             <div class="box" data-c="pt amerta indah otsuka" data-j="relationship manager manajer" data-s="manajemen"
-                data-l="jawa timur" data-p1="0" data-p2="0" data-t="kerja tetap">
+                data-l="jawa timur" data-p1="0" data-p2="0" data-t="kerja tetap" data-f="false">
                 <div class="box-logo">
                     <div class="company-logo">
                         <img src="../../Chelo Tasnim Haryono_Bahan/images/otsuka.png" alt="Logo Perusahaan"
@@ -245,7 +246,7 @@
                     </ul>
                 </div>
                 <div class="box-act">
-                    <div class="btn">
+                    <div class="btn" onclick="setFav(this)">
                         <i class="bx bx-bookmark-plus"></i>
                     </div>
                     <div class="btn">
@@ -254,7 +255,7 @@
                 </div>
             </div>
             <div class="box" data-c="pt amerta indah otsuka" data-j="chief engineer" data-s="teknik" data-l="jawa timur"
-                data-p1="23000000" data-p2="26000000" data-t="kontrak">
+                data-p1="23000000" data-p2="26000000" data-t="kontrak" data-f="false">
                 <div class="box-logo">
                     <div class="company-logo">
                         <img src="../../Chelo Tasnim Haryono_Bahan/images/otsuka.png" alt="Logo Perusahaan"
@@ -283,7 +284,7 @@
                     </ul>
                 </div>
                 <div class="box-act">
-                    <div class="btn">
+                    <div class="btn" onclick="setFav(this)">
                         <i class="bx bx-bookmark-plus"></i>
                     </div>
                     <div class="btn">
@@ -292,7 +293,7 @@
                 </div>
             </div>
             <div class="box" data-c="pt paiton operation" data-j="crane operator" data-s="teknik" data-l="jawa timur"
-                data-p1="8000000" data-p2="12000000" data-t="kontrak">
+                data-p1="8000000" data-p2="12000000" data-t="kontrak" data-f="false">
                 <div class="box-logo">
                     <div class="company-logo">
                         <img src="../../Chelo Tasnim Haryono_Bahan/images/pomi.png" alt="Logo Perusahaan"
@@ -321,7 +322,7 @@
                     </ul>
                 </div>
                 <div class="box-act">
-                    <div class="btn">
+                    <div class="btn" onclick="setFav(this)">
                         <i class="bx bx-bookmark-plus"></i>
                     </div>
                     <div class="btn">
@@ -330,7 +331,7 @@
                 </div>
             </div>
             <div class="box" data-c="pt puninar logistics" data-j="supervisor" data-s="manajemen" data-l="jabodetabek"
-                data-p1="7000000" data-p2="13000000" data-t="kontrak">
+                data-p1="7000000" data-p2="13000000" data-t="kontrak" data-f="false">
                 <div class="box-logo">
                     <div class="company-logo">
                         <img src="../../Chelo Tasnim Haryono_Bahan/images/puninar.png" alt="Logo Perusahaan"
@@ -359,7 +360,7 @@
                     </ul>
                 </div>
                 <div class="box-act">
-                    <div class="btn">
+                    <div class="btn" onclick="setFav(this)">
                         <i class="bx bx-bookmark-plus"></i>
                     </div>
                     <div class="btn">
@@ -369,7 +370,19 @@
             </div>
             <div class="not-found">
                 <img src="../../Chelo Tasnim Haryono_Bahan/icons/c-icon-10.png" alt="Tidak Ditemukan" draggable="false">
-                <p>Lowongan Tidak Ditemukan</p>
+                <p>
+                    Lowongan Yang Anda Cari
+                    <br>
+                    Belum Tersedia
+                </p>
+            </div>
+            <div class="not-found type-2">
+                <img src="../../Chelo Tasnim Haryono_Bahan/icons/c-icon-10.png" alt="Tidak Ditemukan" draggable="false">
+                <p>
+                    Anda Belum Menyimpan
+                    <br>
+                    Lowongan Terkait
+                </p>
             </div>
         </div>
     </div>
