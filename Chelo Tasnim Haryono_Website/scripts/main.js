@@ -324,6 +324,7 @@ if (lowongan != undefined) {
     const notif_circle = document.querySelector('.notif-circle');
     let filter = {
         search: '',
+        disabilitas: '',
         sektor: '',
         lokasi: '',
         gaji_minimum: '',
@@ -339,6 +340,7 @@ if (lowongan != undefined) {
 
             const params = {
                 search: box.getAttribute('data-c') + box.getAttribute('data-j'),
+                disabilitas: box.getAttribute('data-d'),
                 sektor: box.getAttribute('data-s'),
                 lokasi: box.getAttribute('data-l'),
                 gaji_minimum: box.getAttribute('data-p1'),
@@ -358,6 +360,138 @@ if (lowongan != undefined) {
                         };
                     } else if (key === 'gaji_minimum' || key === 'gaji_maximum') {
                         if (Number(filter['gaji_minimum']) <= Number(params['gaji_minimum']) && Number(filter['gaji_maximum']) >= Number(params['gaji_maximum'])) {
+                            count_true++;
+                        };
+                    } else if (key === 'fav') {
+                        if (filter[key] === params[key]) {
+                            count_true++;
+                        } else if (params[key] === 'true') {
+                            count_true++;
+                        };
+                    } else {
+                        if (filter[key].indexOf(params[key]) > -1) {
+                            count_true++;
+                        };
+                    };
+                };
+            };
+
+            if (count_true === count_isset) {
+                display = true;
+            };
+
+            if (display === true) {
+                box.style.display = 'flex';
+                found = true;
+            } else {
+                box.style.display = 'none';
+            };
+        });
+
+        if (found === false && filter.fav === 'false') {
+            not_found.style.display = 'flex';
+            not_found2.style.display = 'none';
+        } else if (found === false && filter.fav === 'true') {
+            not_found.style.display = 'none';
+            not_found2.style.display = 'flex';
+        } else {
+            not_found.style.display = 'none';
+            not_found2.style.display = 'none';
+        };
+    };
+
+    function setFav(e) {
+        if (e.parentElement.parentElement.getAttribute('data-f') == 'false') {
+            e.parentElement.parentElement.setAttribute('data-f', 'true');
+        } else {
+            e.parentElement.parentElement.setAttribute('data-f', 'false');
+        };
+
+        if (document.querySelectorAll('.box[data-f="true"]').length > 0) {
+            notif_circle.style.display = 'block';
+        } else {
+            notif_circle.style.display = 'none';
+        };
+
+        doFilter();
+    };
+
+    function toggleFav() {
+        document.querySelector('.nav-tab').classList.remove('active');
+
+        if (filter.fav === 'true') {
+            filter.fav = 'false';
+            notif_circle.parentElement.style.color = 'rgb(100, 100, 100)';
+        } else {
+            filter.fav = 'true';
+            notif_circle.parentElement.style.color = 'rgb(39, 174, 96)';
+        };
+
+        doFilter();
+    };
+
+    function setField(poin, e) {
+        filter[poin] = e.value;
+        doFilter();
+    };
+
+    function setFilter(poin, e) {
+        if (e.checked === true) {
+            filter[poin] += e.value;
+        } else {
+            filter[poin] = filter[poin].replace(e.value, '');
+        };
+        filter[poin] = filter[poin].trim();
+
+        doFilter();
+    };
+};
+
+
+
+// Filter Proyek
+const proyek = document.querySelector('#proyek');
+if (proyek != undefined) {
+    const loker = document.querySelectorAll('.box');
+    const not_found = document.querySelector('.not-found');
+    const not_found2 = document.querySelector('.not-found.type-2');
+    const notif_circle = document.querySelector('.notif-circle');
+    let filter = {
+        search: '',
+        kategori: '',
+        lokasi: '',
+        tenggat: '',
+        harga_minimum: '',
+        harga_maximum: '',
+        fav: 'false'
+    };
+
+    function doFilter() {
+        let found = false;
+        loker.forEach(box => {
+            let display = false;
+
+            const params = {
+                search: box.getAttribute('data-n'),
+                kategori: box.getAttribute('data-k'),
+                lokasi: box.getAttribute('data-l'),
+                tenggat: box.getAttribute('data-t'),
+                harga_minimum: box.getAttribute('data-p1'),
+                harga_maximum: box.getAttribute('data-p2'),
+                fav: box.getAttribute('data-f')
+            };
+
+            let count_true = 0;
+            let count_isset = 0;
+            for (let key in filter) {
+                if (filter[key] != '') {
+                    count_isset++;
+                    if (key === 'search') {
+                        if (params[key].indexOf(filter[key]) > -1) {
+                            count_true++;
+                        };
+                    } else if (key === 'harga_minimum' || key === 'harga_maximum') {
+                        if (Number(filter['harga_minimum']) <= Number(params['harga_minimum']) && Number(filter['harga_maximum']) >= Number(params['harga_maximum'])) {
                             count_true++;
                         };
                     } else if (key === 'fav') {

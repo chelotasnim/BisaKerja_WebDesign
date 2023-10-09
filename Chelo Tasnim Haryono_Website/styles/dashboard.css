@@ -394,6 +394,7 @@ nav {
     order: 1;
     margin-top: -2px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .box-list a.visited,
@@ -590,7 +591,7 @@ nav {
     flex: 1;
     min-width: max-content;
     padding: 20px 24px;
-    padding-right: 64px;
+    padding-right: 65px;
     box-shadow:
         0 0 3px rgba(0, 0, 0, .05),
         5px 5px 15px rgba(0, 0, 0, .05);
@@ -608,7 +609,7 @@ nav {
     position: absolute;
     display: flex;
     top: 20px;
-    right: 24px;
+    right: 19px;
     gap: 5px;
 }
 
@@ -733,10 +734,12 @@ nav {
 }
 
 .detail-header span {
-    display: block;
+    display: flex;
     margin-top: 16px;
     margin-bottom: 20px;
+    align-items: center;
     font-size: 14px;
+    gap: 5px;
 }
 
 .common-detail {
@@ -750,6 +753,7 @@ nav {
 }
 
 .common {
+    flex: 1;
     min-width: 200px;
     font-size: 14px;
 }
@@ -773,6 +777,19 @@ nav {
 .detail-more {
     padding: 24px 0 28px;
     padding-left: 223px;
+}
+
+.proyek .detail-more {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    gap: 32px;
+}
+
+.proyek .detail-part {
+    flex: 1;
+    margin: 0;
+    min-width: 250px;
 }
 
 .detail-part {
@@ -840,6 +857,23 @@ body.focus-mode .detail-container .is-detail:hover {
 .focus-mode .focus-mode-btn {
     background: var(--primary-green);
     color: rgb(255, 255, 255);
+}
+
+.focus-tip {
+    position: fixed;
+    bottom: -100%;
+    left: 50%;
+    padding: 8px 24px;
+    transform: translateX(-50%);
+    background: var(--super-fade);
+    transition: .3s;
+    pointer-events: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+body.focus-mode .focus-tip {
+    bottom: 72px;
 }
 
 @media(max-width: 1100px) {
@@ -1027,6 +1061,10 @@ body.focus-mode .detail-container .is-detail:hover {
     }
 
     .focus-mode-btn {
+        display: none;
+    }
+
+    .focus-tip {
         display: none;
     }
 }

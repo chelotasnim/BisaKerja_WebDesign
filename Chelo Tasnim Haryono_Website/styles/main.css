@@ -145,7 +145,7 @@ nav {
 
 .nav-link {
     display: flex;
-    transform: translateX(35px);
+    transform: translateX(9px);
     align-items: center;
     gap: 32px;
 }
@@ -295,6 +295,7 @@ nav {
     order: 1;
     margin-top: -2px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .box-list a.visited,

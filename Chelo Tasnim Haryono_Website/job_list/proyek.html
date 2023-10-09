@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Chelo Tasnim Haryono_Bahan/icons/app-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../Chelo Tasnim Haryono_Bahan/plugins/boxicons-2.0.7/css/boxicons.min.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <title>Bisa Kerja | Cari Proyek</title>
+</head>
+
+<body>
+    <!-- Loading Layer -->
+    <div class="loading-layer">
+        <div class="content">
+            <div class="icon">
+                <img src="../../Chelo Tasnim Haryono_Bahan/icons/app-brand.png" alt="Bisa Kerja Logo" draggable="false">
+            </div>
+            <div class="bg">
+                <i class="bx bx-message-square"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bar Pencarian -->
+    <nav>
+        <div class="nav-header">
+            <div class="info">
+                <i class="bx bx-info-circle"></i>
+                Pencarian Proyek Tidak Dipungut Biaya
+            </div>
+            <div class="other-nav">
+                <a onclick="directTo('../index.html')">Layanan</a>
+                <a onclick="directTo('../index.html')">Panduan</a>
+                <a onclick="directTo('../index.html')">Ulasan</a>
+                <a onclick="directTo('../index.html')">Pertanyaan</a>
+            </div>
+        </div>
+        <div class="nav-content">
+            <div class="nav-label" onclick="directTo('../index.html')" style="cursor: pointer;">
+                <img class="app-image" src="../../Chelo Tasnim Haryono_Bahan/icons/app-brand.png" alt="Logo Bisa Kerja"
+                    draggable="false">
+            </div>
+            <div class="nav-search">
+                <p>Cari</p>
+                <div class="input-group">
+                    <div class="field">
+                        <i class="bx bx-search"></i>
+                        <input type="text" onkeyup="setField('search', this)" placeholder="Kata Kunci : Nama Proyek">
+                    </div>
+                    <div class="search-tips">
+                        <p>Contoh :</p>
+                        <p>Website Promosi</p>
+                        <p>Desain Poster</p>
+                        <p>Aplikasi Absen</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-action">
+                <div class="fav-mark" onclick="toggleFav()">
+                    <i class="bx bx-bookmarks"></i>
+                    <div class="notif-circle"></div>
+                </div>
+                <div class="hamburger-menu" onclick="toggleNav()">
+                    <i class="bx bx-menu-alt-right"></i>
+                </div>
+                <div class="btn-group">
+                    <a class="btn on">Masuk</a>
+                    <a class="btn">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Tab Navigasi -->
+    <div class="nav-tab">
+        <div class="tab-rib" onclick="toggleNav()">
+            <i class="bx bx-x"></i>
+            <p>Menu Utama</p>
+        </div>
+        <div class="tab-header">
+            <img src="../../Chelo Tasnim Haryono_Bahan/icons/app-brand.png" alt="Bisa Kerja Logo" draggable="false">
+        </div>
+        <div class="tab-list navigation-link">
+            <div class="box-list">
+                <a onclick="directTo('../index.html')">Laman Utama</a>
+                <i class="bx bx-customize"></i>
+            </div>
+            <div class="box-list">
+                <a onclick="toggleFav()">Proyek Disimpan</a>
+                <i class="bx bx-bookmarks"></i>
+            </div>
+        </div>
+        <div class="tab-action">
+            <div class="btn on">Masuk</div>
+            <div class="btn">Daftar</div>
+        </div>
+    </div>
+
+
+
+    <!-- Daftar Proyek -->
+    <div id="proyek" class="dashboard">
+        <div id="filter">
+            <div class="filter-header">
+                <h1>Filter</h1>
+            </div>
+            <div class="filter-menu">
+                <div class="filter-dd active">
+                    <label>
+                        Kategori
+                        <i class="bx bx-chevron-right"></i>
+                    </label>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('kategori', this)" name="kategori" value="website">
+                        Website
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('kategori', this)" name="kategori" value="aplikasi">
+                        Aplikasi
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('kategori', this)" name="kategori" value="desain">
+                        Desain
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('kategori', this)" name="kategori"
+                            value="powerpoint">
+                        PowerPoint
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('kategori', this)" name="kategori" value="artikel">
+                        Artikel
+                    </div>
+                </div>
+                <div class="filter-dd">
+                    <label>
+                        Lokasi
+                        <i class="bx bx-chevron-right"></i>
+                    </label>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('lokasi', this)" name="lokasi" value="luar negeri">
+                        Luar Negeri
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('lokasi', this)" name="lokasi" value="indonesia">
+                        Indonesia
+                    </div>
+                </div>
+                <div class="filter-dd">
+                    <label>
+                        Tenggat
+                        <i class="bx bx-chevron-right"></i>
+                    </label>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('tenggat', this)" name="tenggat" value="1">
+                        &lt; 1 Bulan
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('tenggat', this)" name="tenggat" value="2">
+                        &lt; 3 Bulan
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('tenggat', this)" name="tenggat" value="3">
+                        &lt; 6 Bulan
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('tenggat', this)" name="tenggat" value="4">
+                        &gt; 6 Bulan
+                    </div>
+                </div>
+                <div class="filter-dd active">
+                    <label>
+                        Harga
+                        <i class="bx bx-chevron-right"></i>
+                    </label>
+                    <div class="filter-list">
+                        <div class="input-w-holder">
+                            <input type="number" onkeyup="setField('harga_minimum', this)" placeholder="0">
+                            <div class="holder">Rp</div>
+                        </div>
+                    </div>
+                    <div class="filter-list">
+                        <span>Sampai Dengan</span>
+                    </div>
+                    <div class="filter-list">
+                        <div class="input-w-holder">
+                            <input type="number" onkeyup="setField('harga_maximum', this)" placeholder="0">
+                            <div class="holder">Rp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="close-filter" class="btn" onclick="slideFilter()">
+            <i class="bx bx-x"></i>
+        </a>
+        <div id="box-container">
+            <div class="btn-group">
+                <a class="btn" onclick="directTo('index.html')">Pekerjaan</a>
+                <a class="btn on">Proyek</a>
+                <a class="btn" onclick="slideFilter()">
+                    <i class="bx bx-menu-alt-right"></i>
+                </a>
+            </div>
+            <div class="box" data-n="website promosi produk" data-k="website" data-l="indonesia" data-t="2"
+                data-p1="200000" data-p2="700000" data-f="false">
+                <div class="box-content">
+                    <div class="main">
+                        <h2 onclick="directTo('proyek_detail.html')">Web Promosi Produk</h2>
+                        <p>Website Landing Page</p>
+                        <span>Diunggah 3 Hari Yang Lalu</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 200.000 - Rp 700.000
+                        </li>
+                        <li>
+                            <i class="bx bx-user-pin"></i>
+                            12 Penawar
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            &lt; 3 Bulan
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn" onclick="setFav(this)">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn" onclick="directTo('proyek_detail.html')">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-n="artikel situs wisata bondowoso" data-k="artikel" data-l="indonesia" data-t="1"
+                data-p1="500000" data-p2="1000000" data-f="false">
+                <div class="box-content">
+                    <div class="main">
+                        <h2 onclick="directTo('proyek_detail.html?2')">Situs Wisata Desa</h2>
+                        <p>Artikel Website</p>
+                        <span>Diunggah 7 Hari Yang Lalu</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 500.000 - Rp 1.000.000
+                        </li>
+                        <li>
+                            <i class="bx bx-user-pin"></i>
+                            27 Penawar
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            &lt; 1 Bulan
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn" onclick="setFav(this)">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn" onclick="directTo('proyek_detail.html?2')">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-n="powerpoint ppt presentasi" data-k="powerpoint" data-l="indonesia" data-t="1"
+                data-p1="250000" data-p2="750000" data-f="false">
+                <div class="box-content">
+                    <div class="main">
+                        <h2 onclick="directTo('proyek_detail.html?3')">PPT Evaluasi Produk</h2>
+                        <p>PowerPoint</p>
+                        <span>Diunggah 7 Hari Yang Lalu</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 250.000 - Rp 750.000
+                        </li>
+                        <li>
+                            <i class="bx bx-user-pin"></i>
+                            27 Penawar
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            &lt; 1 Bulan
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn" onclick="setFav(this)">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn" onclick="directTo('proyek_detail.html?3')">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-n="desain logo stok design" data-k="desain" data-l="indonesia" data-t="1"
+                data-p1="5000000" data-p2="12000000" data-f="false">
+                <div class="box-content">
+                    <div class="main">
+                        <h2 onclick="directTo('proyek_detail.html?4')">Desain Stok Logo</h2>
+                        <p>Desain Logo</p>
+                        <span>Diunggah 14 Oktober 2023</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 5.000.000 - Rp 12.000.000
+                        </li>
+                        <li>
+                            <i class="bx bx-user-pin"></i>
+                            51 Penawar
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            &lt; 1 Bulan
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn" onclick="setFav(this)">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn" onclick="directTo('proyek_detail.html?4')">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="not-found">
+                <img src="../../Chelo Tasnim Haryono_Bahan/icons/c-icon-10.png" alt="Tidak Ditemukan" draggable="false">
+                <p>
+                    Lowongan Yang Anda Cari
+                    <br>
+                    Belum Tersedia
+                </p>
+            </div>
+            <div class="not-found type-2">
+                <img src="../../Chelo Tasnim Haryono_Bahan/icons/c-icon-10.png" alt="Tidak Ditemukan" draggable="false">
+                <p>
+                    Anda Belum Menyimpan
+                    <br>
+                    Lowongan Terkait
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+</body>
+
+</html>

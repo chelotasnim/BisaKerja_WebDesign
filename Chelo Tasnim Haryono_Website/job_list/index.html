@@ -112,6 +112,22 @@
                 <h1>Filter</h1>
             </div>
             <div class="filter-menu">
+                <div class="filter-dd">
+                    <label>
+                        Disabilitas
+                        <i class="bx bx-chevron-right"></i>
+                    </label>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('disabilitas', this)" name="disabilitas"
+                            value="disabilitas">
+                        Diperbolehkan
+                    </div>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('disabilitas', this)" name="disabilitas"
+                            value="nondisabilitas">
+                        Tidak Diperbolehkan
+                    </div>
+                </div>
                 <div class="filter-dd active">
                     <label>
                         Sektor / Kategori
@@ -143,6 +159,10 @@
                         Lokasi
                         <i class="bx bx-chevron-right"></i>
                     </label>
+                    <div class="filter-list">
+                        <input type="checkbox" onchange="setFilter('lokasi', this)" name="lokasi" value="luar negeri">
+                        Luar Negeri
+                    </div>
                     <div class="filter-list">
                         <input type="checkbox" onchange="setFilter('lokasi', this)" name="lokasi" value="jabodetabek">
                         Jabodetabek
@@ -211,13 +231,14 @@
         <div id="box-container">
             <div class="btn-group">
                 <a class="btn on">Pekerjaan</a>
-                <a class="btn">Proyek</a>
+                <a class="btn" onclick="directTo('proyek.html')">Proyek</a>
                 <a class="btn" onclick="slideFilter()">
                     <i class="bx bx-menu-alt-right"></i>
                 </a>
             </div>
-            <div class="box" data-c="pt amerta indah otsuka" data-j="relationship manager manajer" data-s="manajemen"
-                data-l="jawa timur" data-p1="0" data-p2="0" data-t="kerja tetap" data-f="false">
+            <div class="box" data-d="nondisabilitas" data-c="pt amerta indah otsuka"
+                data-j="relationship manager manajer" data-s="manajemen" data-l="jawa timur" data-p1="0" data-p2="0"
+                data-t="kerja tetap" data-f="false">
                 <div class="box-logo">
                     <div class="company-logo">
                         <img src="../../Chelo Tasnim Haryono_Bahan/images/otsuka.png" alt="Logo Perusahaan"
@@ -241,7 +262,7 @@
                         </li>
                         <li>
                             <i class="bx bx-time-five"></i>
-                            21 September 2023
+                            3 Hari Yang Lalu
                         </li>
                     </ul>
                 </div>
@@ -254,8 +275,9 @@
                     </div>
                 </div>
             </div>
-            <div class="box" data-c="pt amerta indah otsuka" data-j="chief engineer" data-s="teknik" data-l="jawa timur"
-                data-p1="23000000" data-p2="26000000" data-t="kontrak" data-f="false">
+            <div class="box" data-d="nondisabilitas" data-c="pt amerta indah otsuka" data-j="chief engineer"
+                data-s="teknik" data-l="jawa timur" data-p1="23000000" data-p2="26000000" data-t="kontrak"
+                data-f="false">
                 <div class="box-logo">
                     <div class="company-logo">
                         <img src="../../Chelo Tasnim Haryono_Bahan/images/otsuka.png" alt="Logo Perusahaan"
@@ -264,7 +286,7 @@
                 </div>
                 <div class="box-content">
                     <div class="main">
-                        <h2 onclick="directTo('work_detail.html')">Chief Engineer</h2>
+                        <h2 onclick="directTo('work_detail.html?2')">Chief Engineer</h2>
                         <p>PT Amerta Indah Otsuka</p>
                         <span>Pasuruan, Jawa Timur</span>
                     </div>
@@ -279,7 +301,7 @@
                         </li>
                         <li>
                             <i class="bx bx-time-five"></i>
-                            27 September 2023
+                            6 Hari Yang Lalu
                         </li>
                     </ul>
                 </div>
@@ -287,13 +309,14 @@
                     <div class="btn" onclick="setFav(this)">
                         <i class="bx bx-bookmark-plus"></i>
                     </div>
-                    <div class="btn" onclick="directTo('work_detail.html')">
+                    <div class="btn" onclick="directTo('work_detail.html?2')">
                         <i class="bx bx-dots-vertical"></i>
                     </div>
                 </div>
             </div>
-            <div class="box" data-c="pt paiton operation" data-j="crane operator" data-s="teknik" data-l="jawa timur"
-                data-p1="8000000" data-p2="12000000" data-t="kontrak" data-f="false">
+            <div class="box" data-d="nondisabilitas" data-c="pt paiton operation" data-j="crane operator"
+                data-s="teknik" data-l="jawa timur" data-p1="8000000" data-p2="12000000" data-t="kontrak"
+                data-f="false">
                 <div class="box-logo">
                     <div class="company-logo">
                         <img src="../../Chelo Tasnim Haryono_Bahan/images/pomi.png" alt="Logo Perusahaan"
@@ -302,7 +325,7 @@
                 </div>
                 <div class="box-content">
                     <div class="main">
-                        <h2 onclick="directTo('work_detail.html')">Crane Operator</h2>
+                        <h2 onclick="directTo('work_detail.html?3')">Crane Operator</h2>
                         <p>PT Paiton Operation</p>
                         <span>Probolinggo, Jawa Timur</span>
                     </div>
@@ -317,7 +340,7 @@
                         </li>
                         <li>
                             <i class="bx bx-time-five"></i>
-                            02 Oktober 2023
+                            13 Oktober 2023
                         </li>
                     </ul>
                 </div>
@@ -325,13 +348,14 @@
                     <div class="btn" onclick="setFav(this)">
                         <i class="bx bx-bookmark-plus"></i>
                     </div>
-                    <div class="btn" onclick="directTo('work_detail.html')">
+                    <div class="btn" onclick="directTo('work_detail.html?3')">
                         <i class="bx bx-dots-vertical"></i>
                     </div>
                 </div>
             </div>
-            <div class="box" data-c="pt puninar logistics" data-j="supervisor" data-s="manajemen" data-l="jabodetabek"
-                data-p1="7000000" data-p2="13000000" data-t="kontrak" data-f="false">
+            <div class="box" data-d="nondisabilitas" data-c="pt puninar logistics" data-j="supervisor"
+                data-s="manajemen" data-l="jabodetabek" data-p1="7000000" data-p2="13000000" data-t="kontrak"
+                data-f="false">
                 <div class="box-logo">
                     <div class="company-logo">
                         <img src="../../Chelo Tasnim Haryono_Bahan/images/puninar.png" alt="Logo Perusahaan"
@@ -340,7 +364,7 @@
                 </div>
                 <div class="box-content">
                     <div class="main">
-                        <h2 onclick="directTo('work_detail.html')">Supervisor</h2>
+                        <h2 onclick="directTo('work_detail.html?4')">Supervisor</h2>
                         <p>PT Puninar Logistics</p>
                         <span>DKI Jakarta</span>
                     </div>
@@ -355,7 +379,7 @@
                         </li>
                         <li>
                             <i class="bx bx-time-five"></i>
-                            09 Oktober 2023
+                            11 Oktober 2023
                         </li>
                     </ul>
                 </div>
@@ -363,7 +387,162 @@
                     <div class="btn" onclick="setFav(this)">
                         <i class="bx bx-bookmark-plus"></i>
                     </div>
-                    <div class="btn" onclick="directTo('work_detail.html')">
+                    <div class="btn" onclick="directTo('work_detail.html?4')">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-d="nondisabilitas" data-c="pt bank rakyat indonesia bri"
+                data-j="management manajemen training trainee magang intern" data-s="manajemen" data-l="jawa timur"
+                data-p1="3000000" data-p2="5000000" data-t="magang" data-f="false">
+                <div class="box-logo">
+                    <div class="company-logo">
+                        <img src="../../Chelo Tasnim Haryono_Bahan/images/bri.png" alt="Logo Perusahaan"
+                            draggable="false">
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="main">
+                        <h2 onclick="directTo('work_detail.html?5')">Management Trainee</h2>
+                        <p>PT Bank Rakyat Indonesia</p>
+                        <span>Surabaya, Jawa Timur</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 3.000.000 - Rp 5.000.000
+                        </li>
+                        <li>
+                            <i class="bx bx-briefcase"></i>
+                            Magang
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            10 Oktober 2023
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn" onclick="setFav(this)">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn" onclick="directTo('work_detail.html?5')">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-d="nondisabilitas" data-c="pt bank rakyat indonesia bri"
+                data-j="account officer staff" data-s="keuangan" data-l="jawa timur" data-p1="4000000" data-p2="7000000"
+                data-t="kerja tetap" data-f="false">
+                <div class="box-logo">
+                    <div class="company-logo">
+                        <img src="../../Chelo Tasnim Haryono_Bahan/images/bri.png" alt="Logo Perusahaan"
+                            draggable="false">
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="main">
+                        <h2 onclick="directTo('work_detail.html?6')">Account Officer</h2>
+                        <p>PT Bank Rakyat Indonesia</p>
+                        <span>Malang, Jawa Timur</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 4.000.000 - Rp 7.000.000
+                        </li>
+                        <li>
+                            <i class="bx bx-briefcase"></i>
+                            Kerja Tetap
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            10 Oktober 2023
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn" onclick="setFav(this)">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn" onclick="directTo('work_detail.html?6')">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-d="nondisabilitas"
+                data-c="pt web media technology indonesia niagahoster international" data-j="server administrator"
+                data-s="it" data-l="luar negeri" data-p1="23000000" data-p2="32000000" data-t="kontrak" data-f="false">
+                <div class="box-logo">
+                    <div class="company-logo">
+                        <img src="../../Chelo Tasnim Haryono_Bahan/images/niagahoster.png" alt="Logo Perusahaan"
+                            draggable="false">
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="main">
+                        <h2 onclick="directTo('work_detail.html?7')">Server Administrator</h2>
+                        <p>Niagahoster International</p>
+                        <span>Singapura, Asia</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 23.000.000 - Rp 32.000.000
+                        </li>
+                        <li>
+                            <i class="bx bx-briefcase"></i>
+                            Kontrak
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            07 Oktober 2023
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn" onclick="setFav(this)">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn" onclick="directTo('work_detail.html?7')">
+                        <i class="bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-d="disabilitas" data-c="pt paiton maintenance" data-j="it support helpdesk"
+                data-s="it" data-l="jawa timur" data-p1="12000000" data-p2="14000000" data-t="kontrak" data-f="false">
+                <div class="box-logo">
+                    <div class="company-logo">
+                        <img src="../../Chelo Tasnim Haryono_Bahan/images/pomi.png" alt="Logo Perusahaan"
+                            draggable="false">
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="main">
+                        <h2 onclick="directTo('work_detail.html?8')">IT Support Helpdesk</h2>
+                        <p>PT Paiton Maintenance</p>
+                        <span>Probolinggo, Jawa Timur</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <i class="bx bx-money"></i>
+                            Rp 12.000.000 - Rp 14.000.000
+                        </li>
+                        <li>
+                            <i class="bx bx-briefcase"></i>
+                            Kontrak
+                        </li>
+                        <li>
+                            <i class="bx bx-time-five"></i>
+                            07 Oktober 2023
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-act">
+                    <div class="btn" onclick="setFav(this)">
+                        <i class="bx bx-bookmark-plus"></i>
+                    </div>
+                    <div class="btn" onclick="directTo('work_detail.html?8')">
                         <i class="bx bx-dots-vertical"></i>
                     </div>
                 </div>
