@@ -388,7 +388,9 @@ if (lowongan != undefined) {
 
         if (found === false && filter.fav === 'false') {
             not_found.style.display = 'flex';
+            not_found2.style.display = 'none';
         } else if (found === false && filter.fav === 'true') {
+            not_found.style.display = 'none';
             not_found2.style.display = 'flex';
         } else {
             not_found.style.display = 'none';
@@ -413,6 +415,8 @@ if (lowongan != undefined) {
     };
 
     function toggleFav() {
+        document.querySelector('.nav-tab').classList.remove('active');
+
         if (filter.fav === 'true') {
             filter.fav = 'false';
             notif_circle.parentElement.style.color = 'rgb(100, 100, 100)';
@@ -446,4 +450,24 @@ if (lowongan != undefined) {
 // Collapse Filter
 function slideFilter() {
     document.querySelector('#filter').classList.toggle('active');
+};
+
+
+
+// Focus Mode
+const focus_btn = document.querySelector('.focus-mode-btn');
+if (focus_btn != undefined) {
+    const detail_container = document.querySelector('.detail-container');
+    focus_btn.addEventListener(
+        'click', function () {
+            document.querySelector('body').classList.toggle('focus-mode');
+            detail_container.classList.add('blur-first');
+        }
+    );
+
+    focus_btn.addEventListener(
+        'mouseleave', function () {
+            detail_container.classList.remove('blur-first');
+        }
+    );
 };
