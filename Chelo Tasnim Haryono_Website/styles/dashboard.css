@@ -679,6 +679,7 @@ nav {
     align-items: center;
     padding: 100px 0;
     background: var(--bg-secondary);
+    border-radius: 8px;
     line-height: 32px;
     text-align: center;
     font-weight: 500;
