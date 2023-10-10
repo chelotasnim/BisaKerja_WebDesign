@@ -850,13 +850,17 @@ body.focus-mode .detail-container .is-detail:hover {
     bottom: 64px;
     right: 80px;
     padding: 8px 8px 2px;
+    animation: shaking 1s linear infinite;
     font-size: 24px;
     z-index: 1000;
 }
 
-.focus-mode .focus-mode-btn {
-    background: var(--primary-green);
-    color: rgb(255, 255, 255);
+.focus-mode .focus-mode-btn,
+.focus-mode .focus-mode-btn:hover {
+    animation: none;
+    border: 1px solid var(--super-fade);
+    background: var(--super-fade);
+    color: var(--normal-text);
 }
 
 .focus-tip {
@@ -870,6 +874,48 @@ body.focus-mode .detail-container .is-detail:hover {
     pointer-events: none;
     border-radius: 5px;
     font-size: 14px;
+}
+
+@keyframes shaking {
+    10% {
+        transform: translateY(-1.5px) translateX(-4px) rotate(-5deg);
+    }
+
+    20% {
+        transform: translateY(-3px) translateX(4px) rotate(5deg);
+    }
+
+    30% {
+        transform: translateY(-4.5px) translateX(-4px) rotate(-5deg);
+    }
+
+    40% {
+        transform: translateY(-6px) translateX(4px) rotate(5deg);
+    }
+
+    50% {
+        transform: translateY(-7.5px) translateX(-4px) rotate(-5deg);
+    }
+
+    60% {
+        transform: translateY(-9px) translateX(4px) rotate(5deg);
+    }
+
+    70% {
+        transform: translateY(-10.5px) translateX(-4px) rotate(-5deg);
+    }
+
+    80% {
+        transform: translateY(-12px) translateX(4px) rotate(5deg);
+    }
+
+    90% {
+        transform: translateY(-4px) translateX(-4px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0) rotate(0);
+    }
 }
 
 body.focus-mode .focus-tip {
